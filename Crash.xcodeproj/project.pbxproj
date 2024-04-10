@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3EDFE2BA2BC3329200DE0413 /* Multi-Crash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi-Crash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EDFE2BA2BC3329200DE0413 /* Crash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDFE2BD2BC3329200DE0413 /* Multi_CrashApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multi_CrashApp.swift; sourceTree = "<group>"; };
 		3EDFE2BF2BC3329200DE0413 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3EDFE2C42BC3329300DE0413 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		3EDFE2B12BC3329100DE0413 = {
 			isa = PBXGroup;
 			children = (
-				3EDFE2BC2BC3329200DE0413 /* Multi-Crash */,
+				3EDFE2BC2BC3329200DE0413 /* Crash */,
 				3EDFE2BB2BC3329200DE0413 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,12 +55,12 @@
 		3EDFE2BB2BC3329200DE0413 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EDFE2BA2BC3329200DE0413 /* Multi-Crash.app */,
+				3EDFE2BA2BC3329200DE0413 /* Crash.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3EDFE2BC2BC3329200DE0413 /* Multi-Crash */ = {
+		3EDFE2BC2BC3329200DE0413 /* Crash */ = {
 			isa = PBXGroup;
 			children = (
 				3EDFE2DB2BC6471000DE0413 /* Assets.xcassets */,
@@ -68,7 +68,7 @@
 				3EDFE2D52BC63EE500DE0413 /* Models */,
 				3EDFE2C32BC3329300DE0413 /* Preview Content */,
 			);
-			path = "Multi-Crash";
+			path = Crash;
 			sourceTree = "<group>";
 		};
 		3EDFE2C32BC3329300DE0413 /* Preview Content */ = {
@@ -104,9 +104,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3EDFE2B92BC3329200DE0413 /* Multi-Crash */ = {
+		3EDFE2B92BC3329200DE0413 /* Crash */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EDFE2C82BC3329300DE0413 /* Build configuration list for PBXNativeTarget "Multi-Crash" */;
+			buildConfigurationList = 3EDFE2C82BC3329300DE0413 /* Build configuration list for PBXNativeTarget "Crash" */;
 			buildPhases = (
 				3EDFE2B62BC3329200DE0413 /* Sources */,
 				3EDFE2B72BC3329200DE0413 /* Frameworks */,
@@ -116,9 +116,9 @@
 			);
 			dependencies = (
 			);
-			name = "Multi-Crash";
+			name = Crash;
 			productName = "Multi-Crash";
-			productReference = 3EDFE2BA2BC3329200DE0413 /* Multi-Crash.app */;
+			productReference = 3EDFE2BA2BC3329200DE0413 /* Crash.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -136,7 +136,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3EDFE2B52BC3329200DE0413 /* Build configuration list for PBXProject "Multi-Crash" */;
+			buildConfigurationList = 3EDFE2B52BC3329200DE0413 /* Build configuration list for PBXProject "Crash" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -149,7 +149,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3EDFE2B92BC3329200DE0413 /* Multi-Crash */,
+				3EDFE2B92BC3329200DE0413 /* Crash */,
 			);
 		};
 /* End PBXProject section */
@@ -325,7 +325,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tobiasfu.Multi-Crash";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tobiasfu.Crash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -354,7 +354,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tobiasfu.Multi-Crash";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tobiasfu.Crash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -365,7 +365,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3EDFE2B52BC3329200DE0413 /* Build configuration list for PBXProject "Multi-Crash" */ = {
+		3EDFE2B52BC3329200DE0413 /* Build configuration list for PBXProject "Crash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EDFE2C62BC3329300DE0413 /* Debug */,
@@ -374,7 +374,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EDFE2C82BC3329300DE0413 /* Build configuration list for PBXNativeTarget "Multi-Crash" */ = {
+		3EDFE2C82BC3329300DE0413 /* Build configuration list for PBXNativeTarget "Crash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EDFE2C92BC3329300DE0413 /* Debug */,
