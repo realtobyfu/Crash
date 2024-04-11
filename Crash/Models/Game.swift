@@ -16,7 +16,9 @@ struct Game {
     
     // Method to handle cashing out
     mutating func cashOut() -> Double {
-        let winnings = betSize * currentMultiplier
+        var winnings = betSize * currentMultiplier
+        winnings = (winnings * 100).rounded() / 100
+
         totalTokens += winnings
         gameStarted = false
         return winnings

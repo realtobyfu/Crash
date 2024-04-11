@@ -1,10 +1,13 @@
 import SwiftUI
 
-enum AlertType
+enum AlertType {
+    case error, win, loss
+}
 
 struct ContentView: View {
     @State private var betSize: String = ""
     @State private var showAlert = false
+    @State private var alertType: AlertType = .error
     @State private var alertMessage = ""
     
     @State private var game = Game()
@@ -12,8 +15,12 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-             BackgroundView(game: $game) // Assuming this is relevant to your UI
+            BackgroundView(game: $game)
             VStack {
+                
+                InstructionText(text: "Eject before it crushes!")
+                    .padding(.bottom, 20)
+        
                 TextField("Enter tokens", text: $betSize)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -25,6 +32,7 @@ struct ContentView: View {
                         cashOut()
                     }
                     .padding()
+                    
                 } else {
                     Button("Start Game") {
                         startGame()
@@ -32,14 +40,24 @@ struct ContentView: View {
                     .padding()
                 }
             }
+            
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Congrats"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                switch alertType {
+                case .error:
+                    return Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                case .win:
+                    return Alert(title: Text("Congratulations"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+
+                case .loss:
+                    return Alert(title: Text("Oops"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                }
             }
         }
     }
     
     private func startGame() {
         guard let bet = Double(betSize), bet <= game.totalTokens else {
+            alertType = .error
             alertMessage = "Your bet exceeds your total tokens or is not a valid number."
             showAlert = true
             return
@@ -64,17 +82,31 @@ struct ContentView: View {
     private func cashOut() {
         let winnings = game.cashOut()
         
-        // Update alert to show winnings
-        alertMessage = "You just won \(winnings) tokens!\nTotal Tokens: \(game.totalTokens)"
+        alertType = winnings > 0 ? .win : .loss
+        alertMessage = winnings > 0 ? "You just won \(winnings) tokens!" : "You lost. Better luck next time!"
+        alertMessage += "\nTotal Tokens: \(game.totalTokens)"
+
         showAlert = true
-        
         betSize = "" // Reset for the next game
         timer?.invalidate()
     }
     
     private func crash() {
         game.crash()
+        alertType = .loss
+        alertMessage = "Game crashed! You lost your bet."
+        showAlert = true
+
         betSize = "" // Reset bet size
         timer?.invalidate()
     }
 }
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+//            .environmentObject(Game()) // Assuming Game is an ObservableObject, if needed
+    }
+}
+
